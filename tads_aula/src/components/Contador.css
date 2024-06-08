@@ -1,0 +1,9 @@
+.contadorContainer {
+    background-color: rgb(212, 245, 245);
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+}

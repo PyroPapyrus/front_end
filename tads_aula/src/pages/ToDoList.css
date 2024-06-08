@@ -1,0 +1,82 @@
+.header {
+    padding: 16px;
+    width: 100%;
+    background-color: rgb(211, 168, 211);
+    margin-bottom: 32px;
+}
+
+.inputContainer {
+    padding: 16px;
+}
+
+.inputLabel {
+    margin-right: 8px;
+    font-size: 24px;
+}
+
+.input {
+    width: 450px;
+    height: 40px;
+    border-color: darkmagenta;
+    border-radius: 8px;
+}
+
+.addButton {
+    width: 40px;
+    height: 40px;
+    background-color: rgb(211, 136, 211);
+    font-size: 24px;
+    border-radius: 8px;
+    margin-left: 16px;
+}
+
+.addButton:hover {
+    background-color: rgb(172, 107, 172);
+}
+
+.listItem {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+    font-size: 20px;
+    background-color: rgb(244, 201, 244);
+    border-radius: 6px;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    margin: 16px 16px;
+}
+
+.divButtonList {
+    display: flex;
+    gap: 20px;
+    margin-right: 20px;
+    align-items: center;
+}
+
+.buttonListUm {
+width: 80px;
+height: 30px;
+border-radius: 5px;
+font-weight: bold;
+background-color:rgb(249, 229, 249);
+}
+
+.buttonListUm:hover {
+    background-color: rgb(15, 239, 15) ;
+}
+
+.buttonListDois {
+    width: 80px;
+    height: 30px;
+    border-radius: 5px;
+    font-weight: bold;
+    background-color:rgb(249, 229, 249);
+}
+
+.buttonListDois:hover {
+    background-color: rgb(237, 14, 14);
+}

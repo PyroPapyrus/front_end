@@ -1,0 +1,75 @@
+import { useState } from "react";
+
+import "./ToDoList.css";
+import { useNavigate } from "react-router-dom";
+
+const ToDoList = ({pageTitle}) => {
+    const navigate = useNavigate();
+    const [toDoList, setToDoList] = useState([]);
+    const [inputValue, setInputValue] = useState();
+
+    const onInputChange = (event) => {
+        setInputValue(event.target.value);
+    };
+
+    const onClickAddTask = () => {
+        if(!inputValue) return;
+        setToDoList([...toDoList, {name: inputValue, done: false }]);
+        setInputValue("");
+    };
+
+    const onClickDeleteTask = (toDoItemToRemove) => {
+        setToDoList(toDoList.filter(toDoItem => toDoItem !== toDoItemToRemove));
+    };
+    
+const ListItem = ({toDoItem}) => {
+    return (<div
+             className="listItem" style={toDoItem.done ?
+             {backgroundColor: "#b6ebb5"} : null}
+            >
+            {toDoItem.name}
+
+            <div  className="divButtonList">
+                <button className="buttonListUm">Concluído</button>
+                <button className="buttonListDois" onClick={()=> onClickDeleteTask(toDoItem)}>Remover</button>
+            </div>
+        </div>
+    );
+};
+
+
+    return (
+        <div>
+            <div className="header">
+                <h1>{pageTitle}</h1>
+            </div>
+            <div className="inputContainer">
+                <label htmlFor="taskText" className="inputLabel">
+                    Digite a sua tarefa:
+                </label>
+
+                <input  
+                    id="taskText" 
+                    name="taskText" 
+                    className="input" 
+                    value={inputValue}
+                    onChange={onInputChange}
+                />
+
+                <button className="addButton" onClick={onClickAddTask}>
+                  +
+                </button>
+            </div>
+            <div className="list">
+                {toDoList.map((toDoItem) => (
+                    <ListItem toDoItem={toDoItem}/>
+                ))}
+
+            </div>
+            <button onClick={() => navigate(-1)}>Voltar</button>
+        </div>
+    );
+}
+
+export default ToDoList;
+  
